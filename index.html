@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paris Anniversary Itinerary (Oct 10–14, 2025)</title>
+  <meta name="description" content="Shareable, mobile-friendly itinerary website for a 4-night Paris anniversary trip with interactive maps.">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <style>
+    :root {
+      --bg: #0f172a;         /* slate-900 */
+      --card: #111827;       /* gray-900 */
+      --muted: #94a3b8;      /* slate-400 */
+      --text: #e5e7eb;       /* gray-200 */
+      --accent: #60a5fa;     /* blue-400 */
+      --accent-2: #f472b6;   /* pink-400 */
+      --ok: #34d399;         /* emerald-400 */
+      --warn: #f59e0b;       /* amber-500 */
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 16px; }
+    header {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: blur(8px);
+      background: linear-gradient(to right, rgba(15,23,42,.9), rgba(17,24,39,.9));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; }
+    .nav a { padding: 8px 10px; border-radius: 10px; }
+    .brand { font-weight: 700; letter-spacing: .3px; }
+    .btn {
+      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius: 12px;
+      background: #1f2937; color: var(--text); border: 1px solid rgba(255,255,255,.08);
+    }
+    .btn:hover { background: #374151; }
+
+    .hero { padding: 28px 0 10px; }
+    .hero h1 { margin: 10px 0 6px; font-size: clamp(26px, 4vw, 40px); }
+    .hero p { color: var(--muted); margin: 0; }
+
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.3); }
+    .card h3 { margin-top: 0; }
+    .tag { display:inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; opacity:.9; }
+    .tag.blue { background: rgba(96,165,250,.15); color: #93c5fd; border:1px solid rgba(96,165,250,.3) }
+    .tag.pink { background: rgba(244,114,182,.15); color: #f9a8d4; border:1px solid rgba(244,114,182,.3) }
+    .tag.green{ background: rgba(52,211,153,.15); color: #a7f3d0; border:1px solid rgba(52,211,153,.3) }
+
+    .map { height: 370px; width: 100%; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+
+    .section-title { margin: 26px 0 12px; font-size: clamp(22px, 3vw, 30px); }
+    ul.clean { padding-left: 18px; }
+    li + li { margin-top: 6px; }
+
+    footer { margin-top: 32px; padding: 24px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+    .sticky-cta { position: fixed; bottom: 16px; right: 16px; z-index: 60; }
+
+    .pill { background: rgba(96,165,250,.15); color: #bfdbfe; border:1px solid rgba(96,165,250,.3); border-radius: 999px; padding: 6px 10px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav container">
+      <div class="brand">Paris Anniversary • Oct 10–14, 2025</div>
+      <div class="links" aria-label="Primary">
+        <a href="#itinerary">Itinerary</a>
+        <a href="#maps">Maps</a>
+        <a href="#evenings">Evening Options</a>
+      </div>
+      <a class="btn" href="https://github.com/new" target="_blank" rel="noopener">Deploy on GitHub Pages →</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>10‑Year Anniversary in Paris</h1>
+      <p>Home base: <strong>Hotel Maison Hamelin</strong> (16th, near Trocadéro). Interactive maps show each day’s activities relative to the hotel.</p>
+      <p class="pill" style="margin-top:8px;">Arrival: Fri Oct 10 • 10:00 AM (CDG) &nbsp;•&nbsp; Departure: Tue Oct 14 • 2:40 PM (CDG)</p>
+    </section>
+
+    <!-- ITINERARY -->
+    <section id="itinerary">
+      <h2 class="section-title">Itinerary</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Day 1 – Fri Oct 10: Arrival &amp; Paris by Night</h3>
+          <span class="tag blue">Gentle Day</span>
+          <ul class="clean">
+            <li>Private transfer CDG → hotel; light lunch nearby.</li>
+            <li>Stroll: Tuileries or Luxembourg Gardens (optional: Musée de l’Orangerie).</li>
+            <li><strong>Seine River Dinner Cruise</strong>.</li>
+            <li><em>Hotel perk</em>: Walk to <strong>Trocadéro</strong> after the cruise for Eiffel views (steps from the hotel).</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Day 2 – Sat Oct 11: Louvre, Wine &amp; Anniversary Dinner</h3>
+          <span class="tag pink">Culture + Wine</span>
+          <ul class="clean">
+            <li><strong>Private Louvre tour</strong> (skip‑the‑line, 2–3 hrs).</li>
+            <li><strong>Wine cellar tasting</strong> at Ô Chateau or Les Caves du Louvre (with cheese).</li>
+            <li>Leisure walk in Saint‑Germain or refresh at hotel.</li>
+            <li><strong>Anniversary Dinner</strong> (Le Jules Verne or Michelin spot). <em>Add‑on</em>: Eiffel sparkle from <strong>Trocadéro</strong>.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Day 3 – Sun Oct 12: Versailles Day Trip &amp; Evening Experience</h3>
+          <span class="tag green">Day Trip</span>
+          <ul class="clean">
+            <li>Guided <strong>Versailles</strong> (palace + gardens), lunch/picnic on‑site.</li>
+            <li>Return late afternoon, easy reset at hotel.</li>
+            <li><strong>Evening</strong>: choose Crazy Horse • Sainte‑Chapelle • Jazz Club.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Day 4 – Mon Oct 13: Cooking, Montmartre &amp; Flexible Evening</h3>
+          <span class="tag blue">Experiences</span>
+          <ul class="clean">
+            <li>Morning <strong>cooking/pastry class</strong>.</li>
+            <li>Explore <strong>Montmartre</strong> (Sacré‑Cœur, Place du Tertre).</li>
+            <li>Optional photo session at Montmartre or <strong>Trocadéro</strong>.</li>
+            <li>Evening: stylish bistro OR your chosen show if not done Day 3.</li>
+          </ul>
+        </article>
+
+        <article class="card" style="grid-column: 1 / -1;">
+          <h3>Day 5 – Tue Oct 14: Leisure &amp; Departure</h3>
+          <span class="tag pink">Easy Morning</span>
+          <ul class="clean">
+            <li>Breakfast near hotel, last‑minute shopping on Rue de Passy.</li>
+            <li>Private transfer to CDG ~11:30 AM for 2:40 PM flight.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- MAPS -->
+    <section id="maps">
+      <h2 class="section-title">Daily Maps (Hotel‑Centered)</h2>
+      <div class="grid grid-2">
+        <div class="card"><h3>Day 1 Map</h3><div id="map-day1" class="map" aria-label="Map for Day 1"></div></div>
+        <div class="card"><h3>Day 2 Map</h3><div id="map-day2" class="map" aria-label="Map for Day 2"></div></div>
+        <div class="card"><h3>Day 3 Map</h3><div id="map-day3" class="map" aria-label="Map for Day 3"></div></div>
+        <div class="card"><h3>Day 4 Map</h3><div id="map-day4" class="map" aria-label="Map for Day 4"></div></div>
+        <div class="card" style="grid-column: 1 / -1;"><h3>Day 5 Map</h3><div id="map-day5" class="map" aria-label="Map for Day 5"></div></div>
+      </div>
+    </section>
+
+    <!-- EVENING OPTIONS -->
+    <section id="evenings">
+      <h2 class="section-title">Evening Options (Choose Your Vibe)</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>🎭 Crazy Horse Paris</h3>
+          <ul class="clean">
+            <li>Chic, intimate, modern cabaret near Champs‑Élysées.</li>
+            <li>Great fit for a glamorous anniversary night.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>🎶 Sainte‑Chapelle Concert</h3>
+          <ul class="clean">
+            <li>Candlelit classical music in a breathtaking gothic chapel.</li>
+            <li>Most romantic/serene option.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>🎷 Paris Jazz Night</h3>
+          <ul class="clean">
+            <li>Le Caveau de la Huchette (lively swing) or Duc des Lombards (cozy, top‑tier jazz).</li>
+            <li>Local, fun, authentic nightlife.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Built for Reuben’s 10‑year anniversary trip • Easily host on GitHub Pages. Maps use OpenStreetMap tiles via Leaflet.</p>
+      </div>
+    </footer>
+
+    <div class="sticky-cta">
+      <a class="btn" href="#maps">Jump to Maps</a>
+    </div>
+  </main>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script>
+    // ===== Coordinates =====
+    const hotel = { name: "Hotel Maison Hamelin", lat: 48.8641, lon: 2.2889 };
+    const coords = {
+      // Icons
+      trocadero: { name: "Trocadéro", lat: 48.8629, lon: 2.2870 },
+      eiffel: { name: "Eiffel Tower / Le Jules Verne", lat: 48.8584, lon: 2.2945 },
+      louvre: { name: "Louvre Museum", lat: 48.8606, lon: 2.3376 },
+      orangerie: { name: "Musée de l'Orangerie", lat: 48.8638, lon: 2.3226 },
+      lux: { name: "Luxembourg Gardens", lat: 48.8462, lon: 2.3372 },
+      stGermain: { name: "Saint‑Germain‑des‑Prés", lat: 48.8546, lon: 2.3339 },
+      oChateau: { name: "Ô Chateau (wine cellar)", lat: 48.8619, lon: 2.3439 },
+      cavesLouvre: { name: "Les Caves du Louvre", lat: 48.8593, lon: 2.3432 },
+      versailles: { name: "Palace of Versailles", lat: 48.8049, lon: 2.1204 },
+      montmartre: { name: "Montmartre (Sacré‑Cœur)", lat: 48.8867, lon: 2.3431 },
+      sainteChapelle: { name: "Sainte‑Chapelle", lat: 48.8554, lon: 2.3450 },
+      crazyHorse: { name: "Crazy Horse Cabaret", lat: 48.8649, lon: 2.3041 },
+      caveau: { name: "Le Caveau de la Huchette (Jazz)", lat: 48.8513, lon: 2.3470 },
+      duc: { name: "Duc des Lombards (Jazz)", lat: 48.8653, lon: 2.3482 },
+      passy: { name: "Rue de Passy (Shopping)", lat: 48.8574, lon: 2.2808 },
+      cdg: { name: "CDG Airport", lat: 49.0097, lon: 2.5479 },
+    };
+
+    // ===== Day groupings (each array includes the hotel first so it's always shown) =====
+    const days = {
+      day1: [hotel, coords.trocadero, coords.orangerie, coords.lux, coords.eiffel],
+      day2: [hotel, coords.louvre, coords.oChateau, coords.cavesLouvre, coords.stGermain, coords.eiffel],
+      day3: [hotel, coords.versailles, coords.crazyHorse, coords.sainteChapelle, coords.caveau, coords.duc],
+      day4: [hotel, coords.montmartre, coords.crazyHorse, coords.sainteChapelle, coords.caveau, coords.duc],
+      day5: [hotel, coords.passy, coords.cdg],
+    };
+
+    // ===== Map Builder =====
+    function buildMap(elId, points) {
+      const map = L.map(elId, {
+        scrollWheelZoom: false,
+      }).setView([hotel.lat, hotel.lon], 12);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors'
+      }).addTo(map);
+
+      const hotelIcon = new L.Icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+      });
+
+      // Add markers
+      const group = [];
+      points.forEach((p, i) => {
+        const marker = L.marker([p.lat, p.lon], {
+          title: p.name,
+          icon: hotelIcon
+        }).addTo(map);
+        const label = (i === 0 ? '🏨 ' : '📍 ') + p.name;
+        marker.bindPopup(label);
+        group.push(marker);
+      });
+
+      // Fit bounds nicely
+      const bounds = L.featureGroup(group).getBounds();
+      if (bounds.isValid()) {
+        map.fitBounds(bounds.pad(0.2));
+      }
+
+      return map;
+    }
+
+    // Init all maps after DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      buildMap('map-day1', days.day1);
+      buildMap('map-day2', days.day2);
+      buildMap('map-day3', days.day3);
+      buildMap('map-day4', days.day4);
+      buildMap('map-day5', days.day5);
+    });
+  </script>
+</body>
+</html>

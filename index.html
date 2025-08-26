@@ -3,241 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paris Anniversary Itinerary (Oct 10–14, 2025)</title>
-  <meta name="description" content="Mobile-friendly itinerary website with accordion days and integrated maps for a 4-night Paris trip.">
-  <link rel="preconnect" href="https://unpkg.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <title>Paris Photo Routes – From Hotel Maison Hamelin</title>
+  <meta name="description" content="Two beautiful walking photo routes starting from Hotel Maison Hamelin (near Trocadéro), with interactive maps and step‑by‑step waypoints.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <style>
-    :root {
-      --bg: #0f172a; --card: #111827; --muted: #94a3b8; --text: #e5e7eb; --accent: #60a5fa;
-    }
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#60a5fa}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:16px}
-    header{position:sticky;top:0;z-index:40;backdrop-filter:blur(8px);background:rgba(15,23,42,.9);border-bottom:1px solid rgba(255,255,255,.08)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1000px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;z-index:30;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
-    .btn{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:12px;background:#1f2937;color:var(--text);border:1px solid rgba(255,255,255,.08)}
-    .hero{padding:28px 0 10px}
-    .hero h1{margin:10px 0 6px;font-size:clamp(26px,4vw,40px)}
-    .hero p{color:var(--muted);margin:0}
-    .section-title{margin:18px 0 10px;font-size:clamp(22px,3vw,30px)}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:0;box-shadow:0 6px 24px rgba(0,0,0,.3)}
-    .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);color:#bfdbfe}
-    ul.clean{padding:0 18px 0 34px}
-    li+li{margin-top:6px}
-    footer{margin-top:32px;padding:24px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
-    .map{height:370px;width:100%;border-radius:14px;overflow:hidden;border-top:1px solid rgba(255,255,255,.08)}
-
-    /* Accordion */
-    .accordion details{margin-bottom:14px;background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.08);overflow:hidden}
-    .accordion summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;justify-content:space-between;padding:14px 16px}
-    .accordion summary::-webkit-details-marker{display:none}
-    .accordion .accordion-body{padding:8px 16px 16px}
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:12px;background:#1f2937;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .btn:hover{background:#334155}
+    h1{font-size:clamp(24px,4vw,36px);margin:10px 0 6px}
     .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+    .map{height:420px;width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+    ol{padding-left:22px}
+    li+li{margin-top:6px}
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);color:#bfdbfe}
   </style>
 </head>
 <body>
   <header>
     <nav class="nav container">
-      <div><strong>Paris Anniversary</strong> • Oct 10–14, 2025</div>
-      <a class="btn" href="#plan">Jump to Itinerary</a>
+      <a class="btn" href="index.html">← Back to Itinerary</a>
+      <div class="muted">Hotel Maison Hamelin • 16th arrondissement (near Trocadéro)</div>
+      <a class="btn" href="#route-a">Jump to Route A</a>
     </nav>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h1>10‑Year Anniversary in Paris</h1>
-      <p>Home base: <strong>Hotel Maison Hamelin</strong> (16th, near Trocadéro). Each day expands to show details and a map centered on your hotel.</p>
-      <p class="muted" style="margin-top:6px">Arrival: Fri Oct 10 • 10:00 AM (CDG) • Departure: Tue Oct 14 • 2:40 PM (CDG)</p>
-    </section>
+    <h1>Walking Photo Routes from Your Hotel</h1>
+    <p class="muted">Both loops begin at <strong>Hotel Maison Hamelin</strong> and are optimized for iconic views, soft light, and easy pacing. Expect plenty of cafés and metro options along the way if you want to shorten the loop.</p>
 
-    <section id="plan">
-      <h2 class="section-title">Daily Itinerary (Accordion)</h2>
-      <p class="muted">Tap to expand a day. Only the first day is open on load, and opening a day closes the others.</p>
-      <div class="accordion">
-        <!-- Day 1 -->
-        <details class="card" data-day="day1" open>
-          <summary>
-            <span><strong>Day 1 – Fri Oct 10: Arrival & Paris by Night</strong></span>
-            <span class="tag">Gentle Day</span>
-          </summary>
-          <div class="accordion-body">
-            <ul class="clean">
-              <li>Private transfer CDG → hotel; light lunch nearby.</li>
-              <li>Stroll: Tuileries or Luxembourg Gardens (optional: Musée de l’Orangerie).</li>
-              <li><strong>Seine River Dinner Cruise</strong>.</li>
-              <li><em>Hotel perk</em>: Walk to <strong>Trocadéro</strong> after the cruise for Eiffel views (steps from the hotel).</li>
-            </ul>
-            <div id="map-day1" class="map" aria-label="Map for Day 1"></div>
-          </div>
-        </details>
-
-        <!-- Day 2 -->
-        <details class="card" data-day="day2">
-          <summary>
-            <span><strong>Day 2 – Sat Oct 11: Louvre, Wine & Anniversary Dinner</strong></span>
-            <span class="tag">Culture + Wine</span>
-          </summary>
-          <div class="accordion-body">
-            <ul class="clean">
-              <li><strong>Private Louvre tour</strong> (skip‑the‑line, 2–3 hrs).</li>
-              <li><strong>Wine cellar tasting</strong> at Ô Chateau or Les Caves du Louvre (with cheese).</li>
-              <li>Leisure walk in Saint‑Germain or refresh at hotel.</li>
-              <li><strong>Anniversary Dinner</strong> (Le Jules Verne or Michelin spot). <em>Add‑on</em>: Eiffel sparkle from <strong>Trocadéro</strong>.</li>
-            </ul>
-            <div id="map-day2" class="map" aria-label="Map for Day 2"></div>
-          </div>
-        </details>
-
-        <!-- Day 3 -->
-        <details class="card" data-day="day3">
-          <summary>
-            <span><strong>Day 3 – Sun Oct 12: Versailles Day Trip & Evening Experience</strong></span>
-            <span class="tag">Day Trip</span>
-          </summary>
-          <div class="accordion-body">
-            <ul class="clean">
-              <li>Guided <strong>Versailles</strong> (palace + gardens), lunch/picnic on‑site.</li>
-              <li>Return late afternoon, easy reset at hotel.</li>
-              <li><strong>Evening</strong>: choose Crazy Horse • Sainte‑Chapelle • Jazz Club.</li>
-            </ul>
-            <div id="map-day3" class="map" aria-label="Map for Day 3"></div>
-          </div>
-        </details>
-
-        <!-- Day 4 -->
-        <details class="card" data-day="day4">
-          <summary>
-            <span><strong>Day 4 – Mon Oct 13: Cooking, Montmartre & Flexible Evening</strong></span>
-            <span class="tag">Experiences</span>
-          </summary>
-          <div class="accordion-body">
-            <ul class="clean">
-              <li>Morning <strong>cooking/pastry class</strong>.</li>
-              <li>Explore <strong>Montmartre</strong> (Sacré‑Cœur, Place du Tertre).</li>
-              <li>Optional photo session at Montmartre or <strong>Trocadéro</strong>.</li>
-              <li>Evening: stylish bistro OR your chosen show if not done Day 3.</li>
-            </ul>
-            <div id="map-day4" class="map" aria-label="Map for Day 4"></div>
-          </div>
-        </details>
-
-        <!-- Day 5 -->
-        <details class="card" data-day="day5">
-          <summary>
-            <span><strong>Day 5 – Tue Oct 14: Leisure & Departure</strong></span>
-            <span class="tag">Easy Morning</span>
-          </summary>
-          <div class="accordion-body">
-            <ul class="clean">
-              <li>Breakfast near hotel, last‑minute shopping on Rue de Passy.</li>
-              <li>Private transfer to CDG ~11:30 AM for 2:40 PM flight.</li>
-            </ul>
-            <div id="map-day5" class="map" aria-label="Map for Day 5"></div>
-          </div>
-        </details>
+    <section id="route-a" class="grid grid-2">
+      <article class="card">
+        <h2>Route A: Trocadéro Golden‑Hour Loop <span class="tag">~3–4 km • 1.5–2 hrs</span></h2>
+        <p>Classic Eiffel vistas with minimal hills. Best at <em>sunrise</em> or <em>sunset</em>.</p>
+        <ol>
+          <li><strong>Hotel Maison Hamelin</strong> (start).</li>
+          <li><strong>Trocadéro Terraces</strong> — wide Eiffel views.</li>
+          <li>Descend to <strong>Pont d’Iéna</strong> and the riverbank.</li>
+          <li><strong>Eiffel Tower</strong> (Bir‑Hakeim side views optional).</li>
+          <li>Walk east along the Seine to <strong>Pont Alexandre III</strong> (ornate bridge, golden statues).</li>
+          <li>Optional quick peek at <strong>Petit/Grand Palais</strong>, then via Avenue Montaigne.</li>
+          <li>Loop back via <strong>Alma‑Marceau</strong> to the hotel.</li>
+        </ol>
+      </article>
+      <div class="card">
+        <div id="map-a" class="map" aria-label="Map for Route A"></div>
       </div>
     </section>
 
-    <section id="evenings">
-      <h2 class="section-title">Evening Options (Choose Your Vibe)</h2>
-      <div class="card" style="padding:16px">
-        <p><strong>🎭 Crazy Horse Paris</strong> — Chic, intimate, modern cabaret near Champs‑Élysées.</p>
-        <p><strong>🎶 Sainte‑Chapelle Concert</strong> — Candlelit classical music in a breathtaking gothic chapel.</p>
-        <p><strong>🎷 Paris Jazz Night</strong> — Le Caveau de la Huchette (lively swing) or Duc des Lombards (cozy, top‑tier jazz).</p>
+    <section id="route-b" class="grid grid-2" style="margin-top:16px;">
+      <article class="card">
+        <h2>Route B: Left Bank Classics & Bridges <span class="tag">~5–6 km • 2–3 hrs</span></h2>
+        <p>Leafy quays, bridges, and timeless Left Bank streets. Best from late afternoon to blue hour.</p>
+        <ol>
+          <li><strong>Hotel Maison Hamelin</strong> (start).</li>
+          <li><strong>Pont de l’Alma</strong> viewpoint (tower + river).</li>
+          <li>Quai d’Orsay riverside walk → <strong>Musée d’Orsay</strong> exteriors.</li>
+          <li><strong>Pont des Arts</strong> (Louvre + river perspective).</li>
+          <li><strong>Cour Carrée du Louvre</strong> → <strong>Palais‑Royal Garden</strong>.</li>
+          <li>Optional <strong>Galerie Vivienne</strong> (covered passage) & cafés.</li>
+          <li>Finish at <strong>Tuileries Garden</strong> (Metro back) or walk to Concorde.</li>
+        </ol>
+      </article>
+      <div class="card">
+        <div id="map-b" class="map" aria-label="Map for Route B"></div>
       </div>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h3>Tips for Great Couple Photos</h3>
+      <ul>
+        <li><strong>Light</strong>: Golden hour (first/last hour of sun) and blue hour (after sunset) are most flattering.</li>
+        <li><strong>Angles</strong>: Step off the main axis at Trocadéro to avoid crowds; use leading lines on bridges.</li>
+        <li><strong>Lenses</strong>: Your Sigma 18–50mm f/2.8 covers it all; go 20mm for wider context at tight spots.</li>
+        <li><strong>Backup plan</strong>: If it drizzles, covered spots like Galerie Vivienne still look romantic.</li>
+      </ul>
     </section>
 
     <footer>
-      <div class="container">
-        <p>Built for Reuben’s 10‑year anniversary trip • Host easily on GitHub Pages. Maps: OpenStreetMap + Leaflet.</p>
-      </div>
+      <p>Made for Reuben’s anniversary trip • Works on mobile • Host on GitHub Pages.</p>
     </footer>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
-    // ===== Coordinates =====
+    // Shared start
     const hotel = { name: "Hotel Maison Hamelin", lat: 48.8641, lon: 2.2889 };
-    const coords = {
-      trocadero: { name: "Trocadéro", lat: 48.8629, lon: 2.2870 },
-      eiffel: { name: "Eiffel Tower / Le Jules Verne", lat: 48.8584, lon: 2.2945 },
-      louvre: { name: "Louvre Museum", lat: 48.8606, lon: 2.3376 },
-      orangerie: { name: "Musée de l'Orangerie", lat: 48.8638, lon: 2.3226 },
-      lux: { name: "Luxembourg Gardens", lat: 48.8462, lon: 2.3372 },
-      stGermain: { name: "Saint‑Germain‑des‑Prés", lat: 48.8546, lon: 2.3339 },
-      oChateau: { name: "Ô Chateau (wine cellar)", lat: 48.8619, lon: 2.3439 },
-      cavesLouvre: { name: "Les Caves du Louvre", lat: 48.8593, lon: 2.3432 },
-      versailles: { name: "Palace of Versailles", lat: 48.8049, lon: 2.1204 },
-      montmartre: { name: "Montmartre (Sacré‑Cœur)", lat: 48.8867, lon: 2.3431 },
-      sainteChapelle: { name: "Sainte‑Chapelle", lat: 48.8554, lon: 2.3450 },
-      crazyHorse: { name: "Crazy Horse Cabaret", lat: 48.8649, lon: 2.3041 },
-      caveau: { name: "Le Caveau de la Huchette (Jazz)", lat: 48.8513, lon: 2.3470 },
-      duc: { name: "Duc des Lombards (Jazz)", lat: 48.8653, lon: 2.3482 },
-      passy: { name: "Rue de Passy (Shopping)", lat: 48.8574, lon: 2.2808 },
-      cdg: { name: "CDG Airport", lat: 49.0097, lon: 2.5479 },
+
+    // Waypoints (approximate, optimized for photography stops rather than strict directions)
+    const WP = {
+      trocadero: { name: "Trocadéro Terraces", lat: 48.8629, lon: 2.2870 },
+      eiffel: { name: "Eiffel Tower", lat: 48.8584, lon: 2.2945 },
+      pontIena: { name: "Pont d’Iéna", lat: 48.8601, lon: 2.2937 },
+      alexIII: { name: "Pont Alexandre III", lat: 48.8639, lon: 2.3130 },
+      petitPalais: { name: "Petit/Grand Palais", lat: 48.8662, lon: 2.3125 },
+      alma: { name: "Alma‑Marceau", lat: 48.8640, lon: 2.3003 },
+
+      pontAlmaView: { name: "Pont de l’Alma View", lat: 48.8631, lon: 2.3002 },
+      dorsay: { name: "Musée d’Orsay (exterior)", lat: 48.8599, lon: 2.3266 },
+      pontArts: { name: "Pont des Arts", lat: 48.8588, lon: 2.3390 },
+      courCarree: { name: "Cour Carrée du Louvre", lat: 48.8625, lon: 2.3376 },
+      palaisRoyal: { name: "Palais‑Royal Garden", lat: 48.8639, lon: 2.3365 },
+      vivienne: { name: "Galerie Vivienne", lat: 48.8664, lon: 2.3397 },
+      tuileries: { name: "Tuileries Garden", lat: 48.8635, lon: 2.3270 }
     };
 
-    // ===== Day groupings =====
-    const days = {
-      day1: [hotel, coords.trocadero, coords.orangerie, coords.lux, coords.eiffel],
-      day2: [hotel, coords.louvre, coords.oChateau, coords.cavesLouvre, coords.stGermain, coords.eiffel],
-      day3: [hotel, coords.versailles, coords.crazyHorse, coords.sainteChapelle, coords.caveau, coords.duc],
-      day4: [hotel, coords.montmartre, coords.crazyHorse, coords.sainteChapelle, coords.caveau, coords.duc],
-      day5: [hotel, coords.passy, coords.cdg],
-    };
-
-    // Expose a small registry so we can resize maps on open
-    window._leafletMaps = {};
-
-    function buildMap(elId, points) {
-      const map = L.map(elId, { scrollWheelZoom: false }).setView([hotel.lat, hotel.lon], 12);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OSM contributors' }).addTo(map);
-      const icon = new L.Icon({
-        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+    function buildMap(elId, markers, path){
+      const map = L.map(elId,{scrollWheelZoom:false}).setView([hotel.lat, hotel.lon], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OSM contributors'}).addTo(map);
+      const pin = new L.Icon({
+        iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+        shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]
       });
-      const group = [];
-      points.forEach((p, i) => {
-        const m = L.marker([p.lat, p.lon], { title: p.name, icon }).addTo(map);
-        m.bindPopup((i===0? '🏨 ' : '📍 ') + p.name);
+      const group=[];
+      // Numbered markers
+      markers.forEach((p,i)=>{
+        const m=L.marker([p.lat,p.lon],{title:p.name,icon:pin}).addTo(map);
+        m.bindPopup(`${i===0? '🏨' : i+''} ${p.name}`);
         group.push(m);
       });
-      const bounds = L.featureGroup(group).getBounds();
-      if (bounds.isValid()) map.fitBounds(bounds.pad(0.2));
-      window._leafletMaps[elId] = map;
+      if(path && path.length){
+        L.polyline(path,{weight:4}).addTo(map);
+      }
+      const bounds=L.featureGroup(group).getBounds();
+      if(bounds.isValid()) map.fitBounds(bounds.pad(0.2));
       return map;
     }
 
-    // Lazy-init maps when a details element opens; only Day 1 on load
-    function ensureMapFor(dayKey){
-      const elId = `map-${dayKey}`;
-      if (!window._leafletMaps[elId]) {
-        buildMap(elId, days[dayKey]);
-      } else {
-        setTimeout(()=> window._leafletMaps[elId].invalidateSize(), 200);
-      }
-    }
+    // Route A sequence
+    const routeA = [
+      hotel,
+      WP.trocadero, WP.pontIena, WP.eiffel,
+      WP.alexIII, WP.petitPalais, WP.alma,
+      hotel
+    ];
+    const pathA = routeA.map(p=>[p.lat,p.lon]);
 
-    window.addEventListener('DOMContentLoaded', () => {
-      // Only Day 1 open initially
-      document.querySelectorAll('.accordion details').forEach((el, idx) => {
-        if (idx !== 0) el.removeAttribute('open');
-        el.addEventListener('toggle', () => {
-          if (el.open) {
-            // close the others
-            document.querySelectorAll('.accordion details').forEach(other => { if (other !== el) other.removeAttribute('open'); });
-            // init/resize this map
-            const key = el.getAttribute('data-day');
-            ensureMapFor(key);
-          }
-        });
-      });
-      // Build the first map immediately
-      ensureMapFor('day1');
+    // Route B sequence
+    const routeB = [
+      hotel,
+      WP.pontAlmaView, WP.dorsay, WP.pontArts, WP.courCarree, WP.palaisRoyal, WP.vivienne, WP.tuileries
+      // From Tuileries: metro Concorde/Tuileries back or continue walking as desired
+    ];
+    const pathB = routeB.map(p=>[p.lat,p.lon]);
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      buildMap('map-a', routeA, pathA);
+      buildMap('map-b', routeB, pathB);
     });
   </script>
 </body>

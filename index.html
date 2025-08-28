@@ -57,9 +57,19 @@
     </section>
 
     <section id="plan" class="accordion">
+      <!-- Day 0 -->
+      <details data-day="day0">
+        <summary><span><strong>✈️ Day 0 – Thu Oct 9: Flight to Paris</strong></span><span class="tag">Travel</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li><strong>8:20 PM</strong> – Delta <strong>DL0266</strong>, depart <strong>JFK → CDG</strong> (overnight).</li>
+          </ul>
+        </div>
+      </details>
+
       <!-- Day 1 -->
       <details open data-day="day1">
-        <summary><span><strong>Day 1 – Fri Oct 10: Arrival, Dinner & Sunset Seine Cruise</strong></span><span class="tag">Gentle Day</span></summary>
+        <summary><span><strong>🇫🇷 Day 1 – Fri Oct 10: Arrival, Dinner & Sunset Seine Cruise</strong></span><span class="tag">Gentle Day</span></summary>
         <div class="body">
           <ul class="clean">
             <li><strong>10:00 AM</strong> – Land at CDG → private transfer to hotel (arrive ~12:00 PM), check‑in / freshen up.</li>
@@ -103,7 +113,7 @@
 
       <!-- Day 2 -->
       <details data-day="day2">
-        <summary><span><strong>Day 2 – Sat Oct 11: Louvre, Wine & Anniversary Dinner</strong></span><span class="tag">Culture + Wine</span></summary>
+        <summary><span><strong>🖼️🍷 Day 2 – Sat Oct 11: Louvre, Wine & Anniversary Dinner</strong></span><span class="tag">Culture + Wine</span></summary>
         <div class="body">
           <ul class="clean">
             <li><strong>Louvre (Small Group ~6) – Skip‑the‑Line</strong> → <a target="_blank" href="https://www.fattiretours.com/paris/tours/skip-the-line-louvre-tour/">Fat Tire Tours</a>.</li>
@@ -125,7 +135,7 @@
 
       <!-- Day 3 -->
       <details data-day="day3">
-        <summary><span><strong>Day 3 – Sun Oct 12: Versailles Day Trip & Cozy Evening</strong></span><span class="tag">Day Trip</span></summary>
+        <summary><span><strong>👑 Day 3 – Sun Oct 12: Versailles Day Trip & Cozy Evening</strong></span><span class="tag">Day Trip</span></summary>
         <div class="body">
           <ul class="clean">
             <li><strong>Versailles guided tour (palace + gardens)</strong> – self‑travel there & back.
@@ -151,7 +161,8 @@
             </li>
           </ul>
           <div id="map-day3" class="map" aria-label="Map for Day 3"></div>
-          $1
+          <div class="btn-row">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Palace+of+Versailles,Versailles">Hotel → Versailles</a>
             <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Restaurant+Le+Bazar,Levallois-Perret">Hotel → Le Bazar</a>
             <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Palace+of+Versailles,Versailles&destination=Restaurant+Le+Bazar,Levallois-Perret&waypoints=Hotel+Maison+Hamelin,Paris|Trocad%C3%A9ro,Paris">Versailles → Hotel → Le Bazar → Trocadéro</a>
           </div>
@@ -160,11 +171,7 @@
 
       <!-- Day 4 -->
       <details data-day="day4">
-        <summary>
-          <span><strong>Day 4 – Mon Oct 13: Pastry Class, Notre-Dame & Montmartre → Dinner + Crazy Horse</strong></span>
-          <span class="tag">Experiences</span>
-          <span class="tag">Showtime: 8:00 PM</span>
-        </summary>        
+        <summary><span><strong>🥐🎭 Day 4 – Mon Oct 13: Pastry Class, Notre‑Dame & Montmartre → Dinner + Crazy Horse</strong></span><span class="tag">Experiences</span><span class="tag">Showtime: 8:00 PM</span></summary>
         <div class="body">
           <ul class="clean">
             <li><strong>~9:30–12:00 PM</strong> – Pastry class (Saint‑Germain‑des‑Prés): <a target="_blank" href="https://www.airbnb.com/experiences/394929">Learn to Bake Classic French Croissants (Maison Fleuret)</a>.</li>
@@ -193,10 +200,11 @@
 
       <!-- Day 5 -->
       <details data-day="day5">
-        <summary><span><strong>Day 5 – Tue Oct 14: Leisure & Departure</strong></span><span class="tag">Easy Morning</span></summary>
+        <summary><span><strong>🛫 Day 5 – Tue Oct 14: Leisure & Departure</strong></span><span class="tag">Easy Morning</span></summary>
         <div class="body">
           <ul class="clean">
             <li>Breakfast near hotel; last‑minute shopping on <strong>Rue de Passy</strong>.</li>
+            <li><strong>Flight:</strong> <strong>2:40 PM</strong> – Delta <strong>DL0265</strong>, depart <strong>CDG → JFK</strong>.</li>
             <li>Private transfer to CDG ~11:30 AM for 2:40 PM flight.</li>
           </ul>
           <div id="map-day5" class="map" aria-label="Map for Day 5"></div>
@@ -207,12 +215,10 @@
       </details>
     </section>
 
+    <!-- USD ↔ EUR Converter -->
     <section id="fx" class="container" style="margin-top:24px">
       <details>
-        <summary>
-          <span><strong>Quick USD ↔ EUR Converter</strong></span>
-          <span class="tag">Handy Tool</span>
-        </summary>
+        <summary><span><strong>Quick USD ↔ EUR Converter</strong></span><span class="tag">Handy Tool</span></summary>
         <div class="body" style="background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:14px; margin-top:10px">
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px">
             <div>
@@ -223,7 +229,8 @@
             <div>
               <label for="fx-rate">Rate (1 USD → EUR)</label>
               <input id="fx-rate" type="number" step="0.0001" value="0.92" style="width:100%; margin-top:6px; padding:10px; border-radius:10px; background:#1f2937; color:var(--text); border:1px solid rgba(255,255,255,.12)">
-              <div class="muted" style="margin-top:6px">Update this to today’s rate (use XE/Google).</div>
+              <div class="muted" style="margin-top:6px">Update this to today’s rate (check XE/Google).
+              </div>
             </div>
             <div>
               <label for="fx-eur">Amount in EUR</label>
@@ -250,12 +257,12 @@
       louvre: { name: "Louvre Museum", lat: 48.8606, lon: 2.3376 },
       orangerie: { name: "Musée de l'Orangerie", lat: 48.8638, lon: 2.3226 },
       lux: { name: "Luxembourg Gardens", lat: 48.8462, lon: 2.3372 },
-      stGermain: { name: "Saint-Germain-des-Prés", lat: 48.8546, lon: 2.3339 },
+      stGermain: { name: "Saint‑Germain‑des‑Prés", lat: 48.8546, lon: 2.3339 },
       oChateau: { name: "Ô Chateau (wine cellar)", lat: 48.8619, lon: 2.3439 },
       cavesLouvre: { name: "Les Caves du Louvre", lat: 48.8593, lon: 2.3432 },
       versailles: { name: "Palace of Versailles", lat: 48.8049, lon: 2.1204 },
-      montmartre: { name: "Montmartre (Sacré-Cœur)", lat: 48.8867, lon: 2.3431 },
-      sainteChapelle: { name: "Sainte-Chapelle", lat: 48.8554, lon: 2.3450 },
+      montmartre: { name: "Montmartre (Sacré‑Cœur)", lat: 48.8867, lon: 2.3431 },
+      sainteChapelle: { name: "Sainte‑Chapelle", lat: 48.8554, lon: 2.3450 },
       crazyHorse: { name: "Crazy Horse Cabaret", lat: 48.8649, lon: 2.3041 },
       caveau: { name: "Le Caveau de la Huchette (Jazz)", lat: 48.8513, lon: 2.3470 },
       duc: { name: "Duc des Lombards (Jazz)", lat: 48.8653, lon: 2.3482 },
@@ -263,7 +270,7 @@
       passy: { name: "Rue de Passy (Shopping)", lat: 48.8574, lon: 2.2808 },
       cdg: { name: "CDG Airport", lat: 49.0097, lon: 2.5479 }
     };
-    
+
     // Day point groupings (hotel first)
     const days = {
       day1: [hotel, coords.trocadero, coords.orangerie, coords.lux, coords.eiffel],
@@ -272,7 +279,6 @@
       day4: [hotel, coords.montmartre, coords.sainteChapelle, coords.crazyHorse],
       day5: [hotel, coords.passy, coords.cdg]
     };
-
 
     // Build a Leaflet map for a day's points
     function buildMap(elId, points){
@@ -310,39 +316,39 @@
         });
       });
     });
-    
-  // FX calculator logic (no external calls)
-  (function(){
-    const usd = document.getElementById('fx-usd');
-    const eur = document.getElementById('fx-eur');
-    const rate = document.getElementById('fx-rate');
-    const eurOut = document.getElementById('fx-eur-out');
-    const usdOut = document.getElementById('fx-usd-out');
-  
-    function formatEUR(v){ return isFinite(v) ? '€' + v.toFixed(2) : '€0.00'; }
-    function formatUSD(v){ return isFinite(v) ? '$' + v.toFixed(2) : '$0.00'; }
-  
-    function updateFromUSD(){
-      const u = parseFloat(usd.value);
-      const r = parseFloat(rate.value);
-      const e = (isFinite(u) && isFinite(r)) ? u * r : 0;
-      eurOut.textContent = formatEUR(e);
-    }
-    function updateFromEUR(){
-      const e = parseFloat(eur.value);
-      const r = parseFloat(rate.value);
-      const u = (isFinite(e) && isFinite(r) && r !== 0) ? e / r : 0;
-      usdOut.textContent = formatUSD(u);
-    }
-    ['input','change'].forEach(evt=>{
-      if(usd) usd.addEventListener(evt, updateFromUSD);
-      if(rate){ rate.addEventListener(evt, updateFromUSD); rate.addEventListener(evt, updateFromEUR); }
-      if(eur) eur.addEventListener(evt, updateFromEUR);
-    });
-    // Init
-    updateFromUSD();
-    updateFromEUR();
-  })();
+
+    // FX calculator logic (no external calls)
+    (function(){
+      const usd = document.getElementById('fx-usd');
+      const eur = document.getElementById('fx-eur');
+      const rate = document.getElementById('fx-rate');
+      const eurOut = document.getElementById('fx-eur-out');
+      const usdOut = document.getElementById('fx-usd-out');
+
+      function formatEUR(v){ return isFinite(v) ? '€' + v.toFixed(2) : '€0.00'; }
+      function formatUSD(v){ return isFinite(v) ? '$' + v.toFixed(2) : '$0.00'; }
+
+      function updateFromUSD(){
+        const u = parseFloat(usd.value);
+        const r = parseFloat(rate.value);
+        const e = (isFinite(u) && isFinite(r)) ? u * r : 0;
+        eurOut.textContent = formatEUR(e);
+      }
+      function updateFromEUR(){
+        const e = parseFloat(eur.value);
+        const r = parseFloat(rate.value);
+        const u = (isFinite(e) && isFinite(r) && r !== 0) ? e / r : 0;
+        usdOut.textContent = formatUSD(u);
+      }
+      ['input','change'].forEach(evt=>{
+        if(usd) usd.addEventListener(evt, updateFromUSD);
+        if(rate){ rate.addEventListener(evt, updateFromUSD); rate.addEventListener(evt, updateFromEUR); }
+        if(eur) eur.addEventListener(evt, updateFromEUR);
+      });
+      // Init
+      updateFromUSD();
+      updateFromEUR();
+    })();
   </script>
 </body>
 </html>

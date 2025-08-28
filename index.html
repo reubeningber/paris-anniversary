@@ -300,21 +300,30 @@
       const mapCache={};
 
       function ensureMap(panel){
-        const mapDiv=panel.querySelector('.map');
-        const key=mapDiv.id.replace('map-','');
+        const mapDiv = panel.querySelector('.map');
+        if(!mapDiv) return; // some panels (e.g., Day 0) have no map
+        const key = mapDiv.id.replace('map-','');
+        if(!days[key]) return; // safety if key not present
         if(!mapCache[key]){ mapCache[key]=buildMap(mapDiv.id, days[key]); }
         else { setTimeout(()=> mapCache[key].invalidateSize(),200); }
       }
+        else { setTimeout(()=> mapCache[key].invalidateSize(),200); }
+      }
 
-      // Initialize first panel map
-      ensureMap(panels[0]);
+      // Initialize: build the first panel that actually contains a map
+      const firstWithMap = panels.find(p=>p.querySelector('.map'));
+      if(firstWithMap) ensureMap(firstWithMap);
 
       // Only one open at a time
       panels.forEach(p=>{
         p.addEventListener('toggle',()=>{
-          if(p.open){ panels.forEach(o=>{ if(o!==p) o.removeAttribute('open'); }); ensureMap(p); }
+          if(p.open){
+            panels.forEach(o=>{ if(o!==p) o.removeAttribute('open'); });
+            ensureMap(p);
+          }
         });
       });
+    });
     });
 
     // FX calculator logic (no external calls)

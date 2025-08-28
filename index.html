@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paris Anniversary Itinerary (Oct 10–14, 2025)</title>
+  <title>Paris Anniversary Itinerary (Oct 9–14, 2025)</title>
   <meta name="description" content="Mobile-friendly Paris itinerary with accordion days, integrated maps, and Open in Google Maps links.">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <style>
@@ -42,7 +42,7 @@
 <body>
   <header>
     <nav class="nav container">
-      <div><strong>Paris Anniversary</strong> • Oct 10–14, 2025</div>
+      <div><strong>Paris Anniversary Trip</strong> • Oct 9–14, 2025</div>
       <div class="btn-row">
         <a class="btn" href="#plan">Jump to Itinerary</a>
         <a class="btn" href="photo-routes.html">📸 Photo Walks</a>
@@ -304,11 +304,12 @@
         if(!mapDiv) return; // some panels (e.g., Day 0) have no map
         const key = mapDiv.id.replace('map-','');
         if(!days[key]) return; // safety if key not present
-        if(!mapCache[key]){ mapCache[key]=buildMap(mapDiv.id, days[key]); }
-        else { setTimeout(()=> mapCache[key].invalidateSize(),200); }
-      }
-        else { setTimeout(()=> mapCache[key].invalidateSize(),200); }
-      }
+        if(!mapCache[key]){ 
+          mapCache[key]=buildMap(mapDiv.id, days[key]); 
+        } else { 
+          setTimeout(()=> mapCache[key].invalidateSize(),200); 
+        }
+      
 
       // Initialize: build the first panel that actually contains a map
       const firstWithMap = panels.find(p=>p.querySelector('.map'));

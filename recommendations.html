@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paris Recommendations – Anniversary Trip</title>
+  <meta name="description" content="Curated Paris recommendations for dining, coffee, shopping, and experiences, with maps and links.">
+
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#60a5fa}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Layout */
+    .container{max-width:1000px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;z-index:40;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:10px 16px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:12px;background:#1f2937;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .btn:hover{background:#334155}
+
+    .hero{padding:22px 0 8px}
+    .hero h1{margin:8px 0 6px;font-size:clamp(24px,4vw,36px)}
+    .muted{color:var(--muted)}
+
+    /* Accordion */
+    .accordion details{margin-bottom:14px;background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,.08);overflow:hidden}
+    .accordion summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 16px}
+    .accordion summary::-webkit-details-marker{display:none}
+    .accordion .body{padding:8px 16px 16px}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);color:#bfdbfe;margin-left:8px}
+
+    .map{height:360px;width:100%;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);margin-top:10px}
+    ul.clean{padding-left:22px}
+    li+li{margin-top:6px}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+    .rec-item{margin-bottom:8px}
+    .rec-item strong{color:var(--text)}
+    .rec-notes{color:var(--muted);font-style:italic;margin-left:8px}
+    .highlight{background:rgba(96,165,250,.1);padding:2px 4px;border-radius:4px}
+
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav container">
+      <div><strong>Paris Recommendations</strong> • Anniversary Trip</div>
+      <div class="btn-row">
+        <a class="btn" href="index.html">← Itinerary</a>
+        <a class="btn" href="photo-routes.html">📸 Photo Walks</a>
+        <a class="btn" href="running-routes.html">🏃 Running Routes</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Curated Paris Recommendations</h1>
+      <p class="muted">Handpicked spots for dining, coffee, shopping, and experiences. Each section shows locations on a map with our <strong>Hotel Maison Hamelin</strong> as the starting point.</p>
+    </section>
+
+    <section class="accordion">
+      <!-- Restaurants -->
+      <details open data-category="restaurants">
+        <summary><span><strong>🍽️ Restaurants</strong></span><span class="tag">22 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong><a href="https://www.angelina-paris.fr/" target="_blank">Mademoiselle Angelina</a></strong> <span class="rec-notes">— Breakfast</span></li>
+            <li class="rec-item"><strong>La Creme de Paris Notre Dame</strong> <span class="rec-notes">— Crepes/breakfast</span></li>
+            <li class="rec-item"><strong>La Boheme</strong> <span class="rec-notes">— Good choice in Montmartre</span></li>
+            <li class="rec-item"><strong class="highlight"><a href="https://www.brasserie-victor-hugo.com/" target="_blank">Brasserie Victor Hugo</a></strong> <span class="rec-notes">— Solid option for dinner</span></li>
+            <li class="rec-item"><strong><a href="https://www.lechoupinet.com/" target="_blank">Le Choupinet</a></strong> <span class="rec-notes">— French with options for SB</span></li>
+            <li class="rec-item"><strong>Monsieur Madame</strong> <span class="rec-notes">— Lunch/drinks (2 good fish options for SB)</span></li>
+            <li class="rec-item"><strong><a href="https://www.bouillondevignes.com/" target="_blank">Bouillon de Vignes</a></strong> <span class="rec-notes">— Casual dinner or lunch</span></li>
+            <li class="rec-item"><strong>La Plage</strong> <span class="rec-notes">— Cute option right on the water for lunch or dinner</span></li>
+            <li class="rec-item"><strong><a href="https://www.baieta.fr/" target="_blank">Baieta</a></strong> <span class="rec-notes">— Lunch Michelin Star (vegetarian options)</span></li>
+            <li class="rec-item"><strong>Novetino</strong> <span class="rec-notes">— Sandwiches (good for lunch on the go!)</span></li>
+            <li class="rec-item"><strong><a href="https://www.cafemericourt.fr/" target="_blank">Cafe Mericourt</a></strong> <span class="rec-notes">— Brunch</span></li>
+            <li class="rec-item"><strong><a href="https://loulou-paris.com/" target="_blank">Lou Lou</a></strong> <span class="rec-notes">— Good option for a nice lunch or dinner</span></li>
+            <li class="rec-item"><strong><a href="https://www.lesdeuxmagots.fr/" target="_blank">Les Deux Magots</a></strong> <span class="rec-notes">— Dinner option with seabass for SB</span></li>
+            <li class="rec-item"><strong><a href="https://www.lerecamier.com/" target="_blank">Le Recamier</a></strong> <span class="rec-notes">— Soufflé spot</span></li>
+            <li class="rec-item"><strong>Louis Philippe</strong> <span class="rec-notes">— Looks good, 3 fishes for SB</span></li>
+            <li class="rec-item"><strong>20 Eiffel</strong> <span class="rec-notes">— Good option for dinner, $37.50 for prefix menu</span></li>
+            <li class="rec-item"><strong><a href="https://gigi-paris.fr/" target="_blank">Gigi</a></strong> <span class="rec-notes">— Good backup option since it's Italian food</span></li>
+            <li class="rec-item"><strong><a href="https://www.bouillonpigalle.com/" target="_blank">Bouillon Pigalle</a></strong> <span class="rec-notes">— Potential lunch spot. Looks casual. Good drinks</span></li>
+            <li class="rec-item"><strong><a href="https://www.leptittroquet.fr/" target="_blank">Le P'tit Troquet</a></strong> <span class="rec-notes">— Has fish for SB. Supposedly amazing Beef bourguignon</span></li>
+            <li class="rec-item"><strong>Le Petit Lutetia</strong> <span class="rec-notes">— Has 2 fish options for SB</span></li>
+            <li class="rec-item"><strong class="highlight"><a href="https://www.chezgeorges.com/" target="_blank">Chez Georges</a></strong> <span class="rec-notes">— Good option for Anniversary Dinner. Lots of fish choices</span></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Mademoiselle+Angelina+Paris|La+Creme+de+Paris+Notre+Dame|La+Boheme+Montmartre|Brasserie+Victor+Hugo+Paris|Le+Choupinet+Paris|Monsieur+Madame+Paris|Bouillon+de+Vignes+Paris|La+Plage+Paris|Baieta+Paris|Novetino+Paris|Cafe+Mericourt+Paris|Lou+Lou+Paris|Les+Deux+Magots+Paris|Le+Recamier+Paris|Louis+Philippe+Paris|20+Eiffel+Paris|Gigi+Paris|Bouillon+Pigalle+Paris|Le+Ptit+Troquet+Paris|Le+Petit+Lutetia+Paris|Chez+Georges+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Restaurants"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Mademoiselle+Angelina+226+Rue+de+Rivoli+Paris">Mademoiselle Angelina</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/La+Creme+de+Paris+Notre+Dame+Quai+de+Montebello+Paris">La Creme de Paris Notre Dame</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/La+Boheme+Montmartre+Paris">La Boheme</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Brasserie+Victor+Hugo+4+Place+Victor+Hugo+Paris">Brasserie Victor Hugo</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Choupinet+167+Boulevard+Saint+Germain+Paris">Le Choupinet</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Monsieur+Madame+9+Rue+Scribe+Paris">Monsieur Madame</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Bouillon+de+Vignes+Paris">Bouillon de Vignes</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/La+Plage+Paris">La Plage</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Baieta+Paris">Baieta</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Novetino+Paris">Novetino</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Cafe+Mericourt+22+Rue+de+la+Folie+Mericourt+Paris">Cafe Mericourt</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Lou+Lou+107+Rue+de+Rivoli+Paris">Lou Lou</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Les+Deux+Magots+6+Place+Saint+Germain+des+Pres+Paris">Les Deux Magots</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Recamier+4+Rue+Recamier+Paris">Le Recamier</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Louis+Philippe+Ile+Saint+Louis+Paris">Louis Philippe</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/20+Eiffel+20+Rue+de+Monttessuy+Paris">20 Eiffel</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Gigi+32+Rue+de+Richelieu+Paris">Gigi</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Bouillon+Pigalle+22+Boulevard+de+Clichy+Paris">Bouillon Pigalle</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Ptit+Troquet+28+Rue+de+lExposition+Paris">Le P'tit Troquet</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Petit+Lutetia+107+Rue+de+Sevres+Paris">Le Petit Lutetia</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Chez+Georges+1+Rue+du+Mail+Paris">Chez Georges</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Coffee Shops -->
+      <details data-category="coffee">
+        <summary><span><strong>☕ Coffee Shops</strong></span><span class="tag">7 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong><a href="https://coeurcoffee.fr/" target="_blank">Coeur Coffee</a></strong></li>
+            <li class="rec-item"><strong>Blondie</strong> <span class="rec-notes">— Coffee and sandwiches</span></li>
+            <li class="rec-item"><strong><a href="https://malonge.fr/" target="_blank">Malonge</a></strong> <span class="rec-notes">— Coffee</span></li>
+            <li class="rec-item"><strong>Minicafe</strong> <span class="rec-notes">— Coffee</span></li>
+            <li class="rec-item"><strong>Sevenly Hart</strong> <span class="rec-notes">— Coffee</span></li>
+            <li class="rec-item"><strong>Cafe Nuanes</strong> <span class="rec-notes">— Matcha</span></li>
+            <li class="rec-item"><strong><a href="https://kitsuneofficial.com/" target="_blank">Cafe Kitsume</a></strong> <span class="rec-notes">— Coffee</span></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Coeur+Coffee+Paris|Blondie+Coffee+Paris|Malonge+Coffee+Paris|Minicafe+Paris|Sevenly+Hart+Coffee+Paris|Cafe+Nuanes+Paris|Cafe+Kitsume+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Coffee Shops"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Coeur+Coffee+Paris">Coeur Coffee</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Blondie+Coffee+Rue+de+Seine+Saint+Germain+Paris">Blondie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Malonge+Coffee+Paris">Malonge</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Minicafe+Paris">Minicafe</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Sevenly+Hart+Coffee+Paris">Sevenly Hart</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Cafe+Nuanes+Matcha+Paris">Cafe Nuanes</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Cafe+Kitsume+1+Place+Vendome+Paris">Cafe Kitsume</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Bakeries -->
+      <details data-category="bakeries">
+        <summary><span><strong>🥐 Bakeries</strong></span><span class="tag">11 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong>Brigat</strong> <span class="rec-notes">— Bakery</span></li>
+            <li class="rec-item"><strong><a href="https://mamiche.fr/" target="_blank">Mamiche</a></strong> <span class="rec-notes">— Bakery (orange blossom brioche)</span></li>
+            <li class="rec-item"><strong>Le Jardin Sucre</strong> <span class="rec-notes">— Pistachio blossom tart</span></li>
+            <li class="rec-item"><strong>Taposserie</strong></li>
+            <li class="rec-item"><strong>Maison Louvard</strong> <span class="rec-notes">— Chocolate chip cookie filled croissant</span></li>
+            <li class="rec-item"><strong>Sain Boulangerie</strong> <span class="rec-notes">— Turnover</span></li>
+            <li class="rec-item"><strong>Aleph</strong> <span class="rec-notes">— Bakery</span></li>
+            <li class="rec-item"><strong><a href="https://www.legrenierapain.com/" target="_blank">Le Grenier a Pain</a></strong> <span class="rec-notes">— Bakery</span></li>
+            <li class="rec-item"><strong><a href="https://www.chapon.com/" target="_blank">Chocolaterie Chapon</a></strong> <span class="rec-notes">— Chocolate mousse</span></li>
+            <li class="rec-item"><strong><a href="https://www.pierreherme.com/" target="_blank">Pierre Herme</a></strong> <span class="rec-notes">— Macaroons</span></li>
+            <li class="rec-item"><strong><a href="https://www.lameredefamille.com/" target="_blank">A La Mere de Famille</a></strong> <span class="rec-notes">— Oldest chocolate shop in Paris</span></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Brigat+Bakery+Paris|Mamiche+Paris|Le+Jardin+Sucre+Paris|Taposserie+Paris|Maison+Louvard+Paris|Sain+Boulangerie+Paris|Aleph+Bakery+Paris|Le+Grenier+a+Pain+Paris|Chocolaterie+Chapon+Paris|Pierre+Herme+Paris|A+La+Mere+de+Famille+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Bakeries"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Brigat+Bakery+Paris">Brigat</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Mamiche+42+Rue+du+Four+Saint+Germain+Paris">Mamiche</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Jardin+Sucre+Pistachio+Tart+Paris">Le Jardin Sucre</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Taposserie+Paris">Taposserie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Maison+Louvard+Croissant+Paris">Maison Louvard</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Sain+Boulangerie+Paris">Sain Boulangerie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Aleph+Bakery+Paris">Aleph</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Grenier+a+Pain+Paris">Le Grenier a Pain</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Chocolaterie+Chapon+Paris">Chocolaterie Chapon</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Pierre+Herme+126+Boulevard+Saint+Germain+Paris">Pierre Herme</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/A+La+Mere+de+Famille+35+Rue+du+Faubourg+Montmartre+Paris">A La Mere de Famille</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Cocktail Bars -->
+      <details data-category="bars">
+        <summary><span><strong>🍸 Cocktail Bars</strong></span><span class="tag">9 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong><a href="https://www.devie-paris.com/" target="_blank">De Vie</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.lesbains-paris.com/" target="_blank">Les Bains</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.lavantcomptoir.com/" target="_blank">L'Avant Comptoir</a></strong> <span class="rec-notes">— Wine and tapas bar</span></li>
+            <li class="rec-item"><strong>Cave Paul Bert</strong></li>
+            <li class="rec-item"><strong>Dirty Dick</strong> <span class="rec-notes">— Pigalle</span></li>
+            <li class="rec-item"><strong>Glass Paris</strong> <span class="rec-notes">— Pigalle</span></li>
+            <li class="rec-item"><strong>Bar Le Night Flight</strong> <span class="rec-notes">— 2nd arrondissement</span></li>
+            <li class="rec-item"><strong>Silencio</strong> <span class="rec-notes">— Montmartre (club)</span></li>
+            <li class="rec-item"><strong><a href="https://www.ritzparis.com/en-GB/hotel-life/bars/bar-hemingway" target="_blank">Bar Hemingway</a></strong></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=De+Vie+Bar+Paris|Les+Bains+Paris|LAvant+Comptoir+Paris|Cave+Paul+Bert+Paris|Dirty+Dick+Pigalle+Paris|Glass+Paris+Pigalle|Bar+Le+Night+Flight+Paris|Silencio+Paris|Bar+Hemingway+Ritz+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Cocktail Bars"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/De+Vie+Bar+Paris">De Vie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Les+Bains+7+Rue+du+Bourg+lAbbe+Paris">Les Bains</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/LAvant+Comptoir+3+Carrefour+de+lOdeon+Paris">L'Avant Comptoir</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Cave+Paul+Bert+16+Rue+Paul+Bert+Paris">Cave Paul Bert</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Dirty+Dick+10+Rue+Frochot+Pigalle+Paris">Dirty Dick</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Glass+Paris+7+Rue+Frochot+Pigalle+Paris">Glass Paris</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Bar+Le+Night+Flight+Paris">Bar Le Night Flight</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Silencio+142+Rue+Montmartre+Paris">Silencio</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Bar+Hemingway+15+Place+Vendome+Ritz+Paris">Bar Hemingway</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Shops -->
+      <details data-category="shops">
+        <summary><span><strong>🛍️ Shops</strong></span><span class="tag">14 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong><a href="https://www.merci-merci.com/" target="_blank">Merci</a></strong></li>
+            <li class="rec-item"><strong>Landline</strong></li>
+            <li class="rec-item"><strong>RSVP</strong></li>
+            <li class="rec-item"><strong><a href="https://www.doverstreetmarket.com/" target="_blank">Dover Street Market</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.buly1803.com/" target="_blank">Officine Universelle Buly</a></strong> <span class="rec-notes">— 45 Rue de Saintonge</span></li>
+            <li class="rec-item"><strong><a href="https://www.longchamp.com/" target="_blank">Longchamp</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.lebonmarche.com/" target="_blank">Le Bon Marche</a></strong></li>
+            <li class="rec-item"><strong>BAC 117</strong></li>
+            <li class="rec-item"><strong>Au Singe Qui Lit</strong></li>
+            <li class="rec-item"><strong>Harb's Perfumes</strong></li>
+            <li class="rec-item"><strong><a href="https://www.officine-generale.com/" target="_blank">Officine General</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.frenchtrotters.fr/" target="_blank">French Trotters</a></strong></li>
+            <li class="rec-item"><strong><a href="https://www.lagrandeepicerie.com/" target="_blank">Le Grande Epicerie</a></strong> <span class="rec-notes">— Gourmet food store</span></li>
+            <li class="rec-item"><strong>Flabelus</strong> <span class="rec-notes">— Mary Jane flats</span></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Merci+Paris|Landline+Store+Paris|RSVP+Store+Paris|Dover+Street+Market+Paris|Officine+Universelle+Buly+Paris|Longchamp+Paris|Le+Bon+Marche+Paris|BAC+117+Paris|Au+Singe+Qui+Lit+Paris|Harbs+Perfumes+Paris|Officine+General+Paris|French+Trotters+Paris|Le+Grande+Epicerie+Paris|Flabelus+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Shops"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Merci+111+Boulevard+Beaumarchais+Paris">Merci</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Landline+Store+Paris">Landline</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/RSVP+Store+Paris">RSVP</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Dover+Street+Market+17+Rue+de+Marseille+Paris">Dover Street Market</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Officine+Universelle+Buly+45+Rue+de+Saintonge+Paris">Officine Universelle Buly</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Longchamp+404+Rue+Saint+Honore+Paris">Longchamp</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Bon+Marche+24+Rue+de+Sevres+Paris">Le Bon Marche</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/BAC+117+Paris">BAC 117</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Au+Singe+Qui+Lit+Bookstore+Paris">Au Singe Qui Lit</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Harbs+Perfumes+Paris">Harb's Perfumes</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Officine+General+Paris">Officine General</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/French+Trotters+128+Rue+Vieille+du+Temple+Paris">French Trotters</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Grande+Epicerie+38+Rue+de+Sevres+Paris">Le Grande Epicerie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Flabelus+Mary+Jane+Flats+Paris">Flabelus</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- Things Not to Miss -->
+      <details data-category="attractions">
+        <summary><span><strong>✨ Things Not to Miss</strong></span><span class="tag">4 spots</span></summary>
+        <div class="body">
+          <ul class="clean">
+            <li class="rec-item"><strong>Wall of I Love You</strong> <span class="rec-notes">— Montmartre</span></li>
+            <li class="rec-item"><strong>Canal St Martin</strong> <span class="rec-notes">— Scenic canal walk</span></li>
+            <li class="rec-item"><strong>Louvre - Diamonds</strong> <span class="rec-notes">— Special collection</span></li>
+            <li class="rec-item"><strong>Montmartre - Rue Saint Rustique Street</strong> <span class="rec-notes">— Most photographed street</span></li>
+          </ul>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Wall+of+I+Love+You+Montmartre+Paris|Canal+St+Martin+Paris|Louvre+Museum+Paris|Rue+Saint+Rustique+Montmartre+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Attractions"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Wall+of+I+Love+You+Place+des+Abbesses+Montmartre+Paris">Wall of I Love You</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Canal+St+Martin+Quai+de+Valmy+Paris">Canal St Martin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Louvre+Museum+Diamonds+Galerie+dApollon+Paris">Louvre - Diamonds</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Rue+Saint+Rustique+Montmartre+Paris">Rue Saint Rustique</a>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <p>Curated for Reuben's 10‑year anniversary trip • Works on mobile • Host on GitHub Pages.</p>
+    </footer>
+  </main>
+
+
+  <script>
+    // Accordion behavior: only one section open at a time
+    document.addEventListener('DOMContentLoaded', () => {
+      const details = document.querySelectorAll('details[data-category]');
+      
+      details.forEach(detail => {
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            details.forEach(other => {
+              if (other !== detail) {
+                other.removeAttribute('open');
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

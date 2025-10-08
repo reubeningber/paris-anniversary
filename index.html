@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Paris Anniversary Itinerary (Oct 9–14, 2025)</title>
   <meta name="description" content="Mobile-friendly Paris itinerary with accordion days, integrated maps, and Open in Google Maps links.">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
   <style>
     :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#60a5fa}
     *{box-sizing:border-box}
@@ -42,10 +42,12 @@
 <body>
   <header>
     <nav class="nav container">
-      <div><strong>Paris Anniversary Trip</strong> • Oct 9–14, 2025</div>
+      <div>
+        <a href="index.html" style="color: var(--text); text-decoration: none;">
+          <span>🥐 🇫🇷 🥖 • Paris Anniversary Trip<span class="muted"> • Oct 9–14, 2025</span></span>
+        </a>
+      </div>
       <div class="btn-row">
-        <a class="btn" href="#plan">Jump to Itinerary</a>
-        <a class="btn" href="photo-routes.html">📸 Photo Walks</a>
         <a class="btn" href="recommendations.html">🍽️ Recommendations</a>
       </div>
     </nav>
@@ -83,13 +85,19 @@
             </li>
             <li><strong>3:00 PM</strong> – <strong>Musée de l’Orangerie</strong> (Timed Entry). <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Tickets 🎟️</a> <span class="tag">Booked ✅</span></li>
             <li><strong>5:45 PM</strong> – <strong>Champagne Cruise on the Seine</strong> with <a target="_blank" href="https://www.vedettesdeparis.fr/">Vedettes de Paris</a>. <span class="tag">60 minutes</span> <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Tickets 🎟️</a> <span class="tag">Booked ✅</span></li>
-            <li><strong>After cruise (~7:15 PM)</strong> – Dinner near the Eiffel Tower</li>
+            <li><strong>After cruise (~7:15 PM) </strong> – Dinner near the Eiffel Tower</strong></li>
             <li><strong>9:00 PM</strong> – Eiffel Tower sparkle from <strong>Trocadéro</strong> (5‑minute show at the start of each hour).</li>
             <li><strong>9:30 PM</strong> – Return to hotel & relax.</li>
           </ul>
-          <div id="map-day1" class="map" aria-label="Map for Day 1"></div>
-          <div class="btn-row">
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Eiffel+Tower,Paris&waypoints=Trocad%C3%A9ro,Paris|Mus%C3%A9e+de+l'Orangerie,Paris|Luxembourg+Gardens,Paris">Open Day 1 in Google Maps</a>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Hotel+Maison+Hamelin+Paris|Cafe+Carette+Trocadero+Paris|Musee+de+lOrangerie+Paris|Vedettes+de+Paris|Eiffel+Tower+Paris|Trocadero+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Day 1"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Hotel+Maison+Hamelin+17+Rue+Jean+de+la+Fontaine+75016+Paris">🏨 Hotel Maison Hamelin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Cafe+Carette+4+Place+du+Trocadero+75016+Paris">Café Carette (Trocadéro)</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Musee+de+lOrangerie+Jardin+des+Tuileries+75001+Paris">Musée de l'Orangerie</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Vedettes+de+Paris+Port+de+Suffren+75007+Paris">Vedettes de Paris</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Eiffel+Tower+Champ+de+Mars+75007+Paris">Eiffel Tower</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Trocadero+Place+du+Trocadero+75016+Paris">Trocadéro</a>
           </div>
         </div>
       </details>
@@ -102,11 +110,16 @@
             <li><strong>9:30 AM</strong> – <strong>Louvre Museum</strong> (Timed Entry). <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Tickets 🎟️</a> <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Highlights Guide 📍</a> <span class="tag">Booked ✅</span></li>
             <li><strong>12:15 PM</strong> – <strong>Wine & Cheese Lunch at Ô&nbsp;Chateau</strong> <a target="_blank" href="https://www.o-chateau.com/en/ateliers">Ô&nbsp;Chateau</a> <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Confirmation 🎫</a> <span class="tag">Booked ✅</span></li>
             <li>Leisurely walk in Saint‑Germain or return to hotel to refresh.</li>
-            <li><strong>Anniversary Dinner</strong> – <em>TBD</em> (we’ll slot in once you pick a spot). Optional Eiffel sparkle from <strong>Trocadéro</strong>.</li>
+            <li><strong>7:15 PM</strong> – <strong>Anniversary Dinner at HEBE</strong> (15 rue Frédéric Sauton, 75005 Paris). <span class="tag">Booked ✅</span></li>
           </ul>
-          <div id="map-day2" class="map" aria-label="Map for Day 2"></div>
-          <div class="btn-row">
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Eiffel+Tower,Paris&waypoints=Louvre+Museum,Paris|%C3%94+Chateau,Paris|Saint-Germain-des-Pr%C3%A9s,Paris">Open Day 2 in Google Maps</a>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Hotel+Maison+Hamelin+Paris|Louvre+Museum+Paris|O+Chateau+Paris|HEBE+Restaurant+Paris|Saint+Germain+des+Pres+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Day 2"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Hotel+Maison+Hamelin+17+Rue+Jean+de+la+Fontaine+75016+Paris">🏨 Hotel Maison Hamelin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Louvre+Museum+Rue+de+Rivoli+75001+Paris">Louvre Museum</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/O+Chateau+68+Rue+Jean+Jacques+Rousseau+75001+Paris">Ô Chateau</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/HEBE+Restaurant+15+rue+Frederic+Sauton+75005+Paris">HEBE Restaurant</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Saint+Germain+des+Pres+Place+Saint+Germain+des+Pres+75006+Paris">Saint-Germain-des-Prés</a>
           </div>
         </div>
       </details>
@@ -116,19 +129,12 @@
         <summary><span><strong>👑 Day 3 – Sun Oct 12: Versailles Day Trip & Cozy Evening</strong></span><span class="tag">Day Trip</span></summary>
         <div class="body">
           <ul class="clean">
-            <li><strong>Versailles guided tour (palace + gardens)</strong> – self‑travel there & back.
+            <li><strong>10:40 AM</strong> – <strong>Versailles: Skip-the-Line Tour of Palace with Gardens Access</strong>. Meet at <strong>10 Av. du Général de Gaulle, 78000 Versailles, France</strong> (just across from Versailles Château Rive Gauche RER station, next to Café Madeleine). <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Tickets 🎟️</a> <span class="tag">Booked ✅</span>
               <ul>
-                <li>Official site (Options 1 & 3): <a target="_blank" href="https://tickets-palaceofversailles.com/palace-of-versailles-skip-the-line-guided-tour-duplicate/">tickets‑palaceofversailles.com</a></li>
-                <li>Alternative provider: <a target="_blank" href="https://www.viator.com/tours/Versailles/Skip-the-line-Versailles-Classic/d763-5460P10">Viator – Skip‑the‑Line Classic</a></li>
+                <li><strong>Getting there:</strong> Take RER Line C to <strong>Versailles Château Rive Gauche Station</strong></li>
               </ul>
             </li>
-            <li><strong>Lunch on‑site</strong> – choose one:
-              <ul>
-                <li><a target="_blank" href="https://www.laflottille.fr/en/menus/">La Flottille</a> (Grand Canal; romantic garden‑side)</li>
-                <li>Private picnic setup (cheeses, meats, baguette, fruit, wine, chocolate, champagne)</li>
-                <li><a target="_blank" href="https://www.ducasse-chateauversailles.com/wp-content/uploads/2025/07/2025_07_07-ORE-CARTE-GB.pdf">Ore – Ducasse (menu)</a></li>
-              </ul>
-            </li>
+            <li><strong>12:45 PM</strong> – <strong>Lunch at ORE - DUCASSE AU CHÂTEAU DE VERSAILLES</strong>. <span class="tag">Booked ✅</span></li>
             <li><strong>Late afternoon</strong> – Return to hotel (~5:30–6:00 PM).</li>
             <li><strong>Evening plan</strong>:
               <ul>
@@ -138,11 +144,15 @@
               </ul>
             </li>
           </ul>
-          <div id="map-day3" class="map" aria-label="Map for Day 3"></div>
-          <div class="btn-row">
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Palace+of+Versailles,Versailles">Hotel → Versailles</a>
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Restaurant+Le+Bazar,Levallois-Perret">Hotel → Le Bazar</a>
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Palace+of+Versailles,Versailles&destination=Restaurant+Le+Bazar,Levallois-Perret&waypoints=Hotel+Maison+Hamelin,Paris|Trocad%C3%A9ro,Paris">Versailles → Hotel → Le Bazar → Trocadéro</a>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Hotel+Maison+Hamelin+Paris|Palace+of+Versailles+France|ORE+Ducasse+Versailles|Le+Bazar+Levallois+Perret|Trocadero+Paris&center=48.8641,2.2889&zoom=11" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Day 3"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Hotel+Maison+Hamelin+17+Rue+Jean+de+la+Fontaine+75016+Paris">🏨 Hotel Maison Hamelin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/10+Av+du+General+de+Gaulle+78000+Versailles+France">Tour Meeting Point</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Palace+of+Versailles+Place+dArmes+78000+Versailles+France">Palace of Versailles</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/ORE+Ducasse+Chateau+de+Versailles+78000+Versailles+France">ORE - Ducasse Restaurant</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Le+Bazar+Restaurant+85+Rue+Anatole+France+92300+Levallois+Perret+France">Le Bazar Restaurant</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Trocadero+Place+du+Trocadero+75016+Paris">Trocadéro</a>
           </div>
         </div>
       </details>
@@ -164,14 +174,19 @@
               </ul>
             </li>
             <li><strong>5:30–6:30 PM</strong> – Return to hotel to refresh.</li>
-            <li><strong>6:30–8:00 PM</strong> – Elegant dinner (central Paris). Option: <a target="_blank" href="https://girafe-restaurant.com/paris/menus/">Girafe (Trocadéro)</a>.</li>
+            <li><strong>8:00 PM</strong> – <strong>Dinner at Chez Georges Paris</strong> (273 Boulevard Pereire, 75017 Paris). <span class="tag">Booked ✅</span></li>
             <li><strong>10:30PM show (~12:00 AM end)</strong> – <strong>Crazy Horse</strong>. <a class="tag" href="shortcuts://run-shortcut?name=Open%20Paris%20Folder">Tickets 🎟️</a> <span class="tag">Booked ✅ </span></li>
             <li><strong>After</strong> – Optional Seine stroll, nightcap, or one last Eiffel sparkle.</li>
           </ul>
-          <div id="map-day4" class="map" aria-label="Map for Day 4"></div>
-          <div class="btn-row">
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Notre-Dame+de+Paris,Paris&waypoints=Maison+Fleuret,Paris|Montmartre,Paris">Hotel → Class → Notre‑Dame → Montmartre</a>
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Montmartre,Paris&destination=Crazy+Horse,Paris">Montmartre → Crazy Horse</a>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Hotel+Maison+Hamelin+Paris|Maison+Fleuret+Paris|Notre+Dame+Cathedral+Paris|Montmartre+Paris|Chez+Georges+Paris|Crazy+Horse+Paris&center=48.8641,2.2889&zoom=13" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Day 4"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Hotel+Maison+Hamelin+17+Rue+Jean+de+la+Fontaine+75016+Paris">🏨 Hotel Maison Hamelin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Maison+Fleuret+Saint+Germain+des+Pres+Paris">Maison Fleuret (Pastry Class)</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Notre+Dame+Cathedral+6+Parvis+Notre+Dame+75004+Paris">Notre-Dame Cathedral</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Montmartre+Sacre+Coeur+35+Rue+du+Chevalier+de+la+Barre+75018+Paris">Montmartre & Sacré-Cœur</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Chez+Georges+Paris+273+Boulevard+Pereire+75017+Paris">Chez Georges Paris</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Crazy+Horse+12+Avenue+George+V+75008+Paris">Crazy Horse Cabaret</a>
           </div>
         </div>
       </details>
@@ -182,12 +197,15 @@
         <div class="body">
           <ul class="clean">
             <li>Breakfast near hotel; last‑minute shopping on <strong>Rue de Passy</strong>.</li>
-            <li><strong>Flight:</strong> <strong>2:40 PM</strong> – Delta <strong>DL0265</strong>, depart <strong>CDG → JFK</strong>.</li>
             <li>Private transfer to CDG ~11:30 AM for 2:40 PM flight.</li>
+            <li><strong>Flight:</strong> <strong>2:40 PM</strong> – Delta <strong>DL0265</strong>, depart <strong>CDG → JFK</strong>.</li>
           </ul>
-          <div id="map-day5" class="map" aria-label="Map for Day 5"></div>
-          <div class="btn-row">
-            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Maison+Hamelin,Paris&destination=Paris+CDG+Airport&waypoints=Rue+de+Passy,Paris">Open Day 5 in Google Maps</a>
+          <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBkl_o3CZQNeqQo3hQsMUxt5HV3oas2kWA&q=Hotel+Maison+Hamelin+Paris|Rue+de+Passy+Paris|CDG+Airport+Paris&center=48.8641,2.2889&zoom=11" 
+                  class="map" frameborder="0" allowfullscreen="" loading="lazy" aria-label="Google Map for Day 5"></iframe>
+          <div class="btn-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px;">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Hotel+Maison+Hamelin+17+Rue+Jean+de+la+Fontaine+75016+Paris">🏨 Hotel Maison Hamelin</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Rue+de+Passy+Shopping+Street+75016+Paris">Rue de Passy (Shopping)</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/Paris+Charles+de+Gaulle+Airport+95700+Roissy+en+France">CDG Airport</a>
           </div>
         </div>
       </details>
@@ -219,87 +237,30 @@
         </div>
       </details>
     </section>
-
     <footer>
-      <p>Built for Reuben’s 10‑year anniversary trip • Works on mobile • Host on GitHub Pages.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <p>Built for Reuben & Sarah-Beth's 10‑year anniversary trip</p>
+        <div class="btn-row">
+          <a class="btn" href="photo-routes.html">📸 Photo Routes</a>
+          <a class="btn" href="running-routes.html">🏃 Running Routes</a>
+        </div>
+      </div>
     </footer>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script>
-    // Coordinates
-    const hotel = { name: "Hotel Maison Hamelin", lat: 48.8641, lon: 2.2889 };
-    const coords = {
-      trocadero: { name: "Trocadéro", lat: 48.8629, lon: 2.2870 },
-      eiffel: { name: "Eiffel Tower / Le Jules Verne", lat: 48.8584, lon: 2.2945 },
-      louvre: { name: "Louvre Museum", lat: 48.8606, lon: 2.3376 },
-      orangerie: { name: "Musée de l'Orangerie", lat: 48.8638, lon: 2.3226 },
-      lux: { name: "Luxembourg Gardens", lat: 48.8462, lon: 2.3372 },
-      stGermain: { name: "Saint‑Germain‑des‑Prés", lat: 48.8546, lon: 2.3339 },
-      oChateau: { name: "Ô Chateau (wine cellar)", lat: 48.8619, lon: 2.3439 },
-      cavesLouvre: { name: "Les Caves du Louvre", lat: 48.8593, lon: 2.3432 },
-      versailles: { name: "Palace of Versailles", lat: 48.8049, lon: 2.1204 },
-      montmartre: { name: "Montmartre (Sacré‑Cœur)", lat: 48.8867, lon: 2.3431 },
-      sainteChapelle: { name: "Sainte‑Chapelle", lat: 48.8554, lon: 2.3450 },
-      crazyHorse: { name: "Crazy Horse Cabaret", lat: 48.8649, lon: 2.3041 },
-      caveau: { name: "Le Caveau de la Huchette (Jazz)", lat: 48.8513, lon: 2.3470 },
-      duc: { name: "Duc des Lombards (Jazz)", lat: 48.8653, lon: 2.3482 },
-      bazar: { name: "Le Bazar (Levallois-Perret)", lat: 48.89755, lon: 2.28267 },
-      passy: { name: "Rue de Passy (Shopping)", lat: 48.8574, lon: 2.2808 },
-      cdg: { name: "CDG Airport", lat: 49.0097, lon: 2.5479 }
-    };
-
-    // Day point groupings (hotel first)
-    const days = {
-      day1: [hotel, coords.trocadero, coords.orangerie, coords.lux, coords.eiffel],
-      day2: [hotel, coords.louvre, coords.oChateau, coords.cavesLouvre, coords.stGermain, coords.eiffel],
-      day3: [hotel, coords.versailles, coords.bazar, coords.trocadero],
-      day4: [hotel, coords.montmartre, coords.sainteChapelle, coords.crazyHorse],
-      day5: [hotel, coords.passy, coords.cdg]
-    };
-
-    // Build a Leaflet map for a day's points
-    function buildMap(elId, points){
-      const map=L.map(elId,{scrollWheelZoom:false}).setView([hotel.lat,hotel.lon],12);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OSM contributors'}).addTo(map);
-      const icon=new L.Icon({
-        iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-        shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-        iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]
-      });
-      const group=[]; points.forEach((p,i)=>{const m=L.marker([p.lat,p.lon],{title:p.name,icon}).addTo(map); m.bindPopup((i===0?'🏨 ':'📍 ')+p.name); group.push(m);});
-      const bounds=L.featureGroup(group).getBounds(); if(bounds.isValid()) map.fitBounds(bounds.pad(0.2));
-      return map;
-    }
-
-    // Lazy init: first day's map builds immediately; others build when panel opens
-    window.addEventListener('DOMContentLoaded',()=>{
-      const panels=[...document.querySelectorAll('details[data-day]')];
-      const mapCache={};
-
-      function ensureMap(panel){
-        const mapDiv = panel.querySelector('.map');
-        if(!mapDiv) return; // some panels (e.g., Day 0) have no map
-        const key = mapDiv.id.replace('map-','');
-        if(!days[key]) return; // safety if key not present
-        if(!mapCache[key]){ 
-          mapCache[key]=buildMap(mapDiv.id, days[key]); 
-        } else { 
-          setTimeout(()=> mapCache[key].invalidateSize(),200); 
-        }
-      };
+    // Accordion behavior: only one section open at a time
+    document.addEventListener('DOMContentLoaded', () => {
+      const details = document.querySelectorAll('details[data-day]');
       
-
-      // Initialize: build the first panel that actually contains a map
-      const firstWithMap = panels.find(p=>p.querySelector('.map'));
-      if(firstWithMap) ensureMap(firstWithMap);
-
-      // Only one open at a time
-      panels.forEach(p=>{
-        p.addEventListener('toggle',()=>{
-          if(p.open){
-            panels.forEach(o=>{ if(o!==p) o.removeAttribute('open'); });
-            ensureMap(p);
+      details.forEach(detail => {
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            details.forEach(other => {
+              if (other !== detail) {
+                other.removeAttribute('open');
+              }
+            });
           }
         });
       });

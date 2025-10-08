@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=devic    <footer>
+      <p>Built for Reuben & Sarah-Beth's 10‑year anniversary trip</p>
+    </footer>idth, initial-scale=1" />
   <title>Paris Photo Routes – From Hotel Maison Hamelin</title>
   <meta name="description" content="Two beautiful walking photo routes from Hotel Maison Hamelin (near Trocadéro), with interactive maps, step‑by‑step waypoints, and open in Google Maps links.">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
@@ -33,11 +35,13 @@
 <body>
   <header>
     <nav class="nav container">
-      <a class="btn" href="index.html">← Back to Itinerary</a>
-      <div class="muted">Hotel Maison Hamelin • 16th arrondissement (near Trocadéro)</div>
+      <div>
+        <a href="index.html" style="color: var(--text); text-decoration: none;">
+          <span>🥐 🇫🇷 🥖 • Paris Anniversary Trip<span class="muted"> • Oct 9–14, 2025</span></span>
+        </a>
+      </div>
       <div class="btn-row">
-        <a class="btn" href="#route-a">Jump to Route A</a>
-        <a class="btn" href="#route-b">Jump to Route B</a>
+        <a class="btn" href="index.html">← Itinerary</a>
         <a class="btn" href="recommendations.html">🍽️ Recommendations</a>
       </div>
     </nav>
@@ -102,7 +106,13 @@
     </section>
 
     <footer>
-      <p>Made for Reuben’s anniversary trip • Works on mobile • Host on GitHub Pages.</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <p>Built for Reuben & Sarah-Beth's 10‑year anniversary trip</p>
+        <div class="btn-row">
+          <a class="btn" href="photo-routes.html">📸 Photo Routes</a>
+          <a class="btn" href="running-routes.html">🏃 Running Routes</a>
+        </div>
+      </div>
     </footer>
   </main>
 
